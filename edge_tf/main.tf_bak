@@ -1,0 +1,33 @@
+data "http" "my_public_ip" {
+    url = "http://ipv4.icanhazip.com"
+}
+
+module "edge_esx_gw01" {
+    source  = "terraform-aviatrix-modules/mc-edge/aviatrix"
+    version = "1.2.0"
+
+    site_id = var.side_id
+
+    edge_gws = {
+        gw1 = {
+            gw_name                        = var.edge_gw_name
+            management_interface_config    = var.management_interface_config # DHCP Enabled
+            wan_interface_ip_prefix        = var.wan_interface_ip_prefix # Assigned to Edge GW
+            wan_default_gateway_ip         = var.wan_default_gateway_ip  # Assigned to WAN KVM Network
+            management_egress_ip_prefix    = "${chomp(data.http.my_public_ip.body)}/32" # my Public IP
+            lan_interface_ip_prefix        = var.lan_interface_prefix    # Assigned to Edge GW
+            local_as_number                = var.edge_local_as_number
+            ztp_file_download_path         = var.ztp_file_download_path
+            ztp_file_type                  = var.ztp_file_type
+
+            transit_gws = {
+                aws_uk_transit_gws = {
+                    name                        = var.avx_transit_gw
+                    enable_over_private_network = var.transit_gws_enable_over_private_network
+                    attached                    = var.avx_transit_gw_attached
+                },
+            }
+        }
+    }
+}
+

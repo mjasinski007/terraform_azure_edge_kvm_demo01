@@ -1,0 +1,6 @@
+<network>
+  <name>avx-br-wan</name>
+  <forward mode='nat'/>
+  <bridge name='avx-br-wan' stp='on' delay='0'/>
+  <ip address='192.168.200.1' prefix='30'/>
+</network>

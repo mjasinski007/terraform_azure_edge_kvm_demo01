@@ -1,0 +1,10 @@
+<network>
+  <name>avx-br-lan</name>
+  <forward mode='open'/>
+  <bridge name='avx-br-lan' stp='on' delay='0'/>
+  <ip address='192.168.20.1' prefix='24'>
+  <dhcp>
+      <range start='192.168.20.2' end='192.168.20.2'/>
+    </dhcp>
+  </ip>
+</network>

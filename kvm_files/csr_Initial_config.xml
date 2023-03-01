@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Environment
+   xmlns:oe="http://schemas.dmtf.org/ovf/environment/1">
+    <PropertySection>
+        <Property oe:key="com.cisco.csr1000v.license.1" oe:value="security"/>
+        <Property oe:key="com.cisco.csr1000v.console.1" oe:value="serial"/>
+        
+<Property oe:key="com.cisco.csr1000v.config-version.1" oe:value="1.0"/>
+        <Property oe:key="com.cisco.csr1000v.domain-name.1"/>
+        <Property oe:key="com.cisco.csr1000v.enable-scp-server.1" oe:value="False"/>
+        <Property oe:key="com.cisco.csr1000v.enable-ssh-server.1" oe:value="True"/>
+        <Property oe:key="com.cisco.csr1000v.hostname.1" oe:value="vCSR-R01"/>
+        <Property oe:key="com.cisco.csr1000v.license.1" oe:value="ax"/>
+        <Property oe:key="com.cisco.csr1000v.login-password.1" oe:value="cisco"/>
+        <Property oe:key="com.cisco.csr1000v.login-username.1" oe:value="cisco"/>
+        <Property oe:key="com.cisco.csr1000v.mgmt-interface.1" oe:value="GigabitEthernet1"/>
+        <Property oe:key="com.cisco.csr1000v.mgmt-ipv4-addr.1" oe:value="192.168.20.5"/>
+        <Property oe:key="com.cisco.csr1000v.mgmt-ipv4-gateway.1" oe:value="192.168.20.2"/>
+        <Property oe:key="com.cisco.csr1000v.mgmt-ipv4-network.1"/>
+        <Property oe:key="com.cisco.csr1000v.mgmt-vlan.1"/>
+        <Property oe:key="com.cisco.csr1000v.pnsc-agent-local-port.1"/>
+        <Property oe:key="com.cisco.csr1000v.pnsc-ipv4-addr.1"/>
+        <Property oe:key="com.cisco.csr1000v.pnsc-shared-secret-key.1"/>
+        <Property oe:key="com.cisco.csr1000v.privilege-password.1"/>
+        <Property oe:key="com.cisco.csr1000v.remote-mgmt-ipv4-addr.1"/>
+        <Property oe:key="com.cisco.csr1000v.resource-template.1" oe:value="service_plane_medium"/>
+        <Property oe:key="com.cisco.csr1000v.ios-config-0001" oe:value="logging buffered 10000"/>
+        <Property oe:key="com.cisco.csr1000v.ios-config-0002" oe:value="hostname vCSR-R01"/>
+        <Property oe:key="com.cisco.csr1000v.ios-config-0003" oe:value="ip domain-name cisco.com"/>
+        <Property oe:key="com.cisco.csr1000v.ios-config-0004" oe:value="crypto key generate rsa modulus 1024"/>
+        <Property oe:key="com.cisco.csr1000v.ios-config-0005" oe:value="interface GigabitEthernet2"/>
+        <Property oe:key="com.cisco.csr1000v.ios-config-0006" oe:value="ip address 10.0.0.5 255.255.255.0"/>
+        <Property oe:key="com.cisco.csr1000v.ios-config-0007" oe:value="no shut"/>
+        <Property oe:key="com.cisco.csr1000v.ios-config-0008" oe:value="exit"/>
+        <Property oe:key="com.cisco.csr1000v.ios-config-0009" oe:value="ip route 0.0.0.0 0.0.0.0 192.168.20.2"/>
+    </PropertySection>
+</Environment>

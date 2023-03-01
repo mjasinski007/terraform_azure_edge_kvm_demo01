@@ -1,0 +1,10 @@
+<network>
+  <name>avx-br-mgmt</name>
+  <forward mode='nat'/>
+  <bridge name='avx-br-mgmt' stp='on' delay='0'/>
+  <ip address='10.210.100.1' prefix='24'>
+  <dhcp>
+      <range start='10.210.100.2' end='10.210.100.2'/>
+    </dhcp>
+  </ip>
+</network>

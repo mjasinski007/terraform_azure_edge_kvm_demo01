@@ -1,0 +1,37 @@
+#cloud-config
+
+write_files:
+  - path:  /etc/netplan/50-cloud-init.yaml
+    permissions: '0644'
+    content: |
+         network:
+           version: 2
+           renderer: networkd
+           ethernets:
+             enp1s0:
+               addresses: [192.168.20.7/24]
+               routes:
+                  - to: default
+                    via: 192.168.20.3
+runcmd:
+  - [sudo, ifconfig, enp1s0, up]
+  - [sudo, netplan, generate]
+  - [sudo, netplan, apply]
+  - [sudo, sed ,-i, 's/PasswordAuthentication no/PasswordAuthentication yes/g', /etc/ssh/sshd_config]
+  - [sudo, systemctl, restart, sshd]
+
+package_upgrade: true
+packages:
+    - inetutils-traceroute
+    - iperf3
+    - netstat-nat
+    - apt-transport-https
+    - unzip
+    - git
+    - wget
+    - curl
+    - iputils-ping
+    - net-tools
+
+
+schema --config-fil
